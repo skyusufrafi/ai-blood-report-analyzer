@@ -1,0 +1,33 @@
+# Node
+node_modules/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Backend generated files
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/uploads/*
+
+# Python cache
+.pytest_cache/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
