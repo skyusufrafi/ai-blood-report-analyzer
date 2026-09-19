@@ -1,14 +1,15 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "http://127.0.0.1:8000/api",
+
   headers: {
     Accept: "application/json",
   },
 });
 
-
-// Upload blood report
 export const uploadReport = async (file) => {
   const formData = new FormData();
 
@@ -22,8 +23,6 @@ export const uploadReport = async (file) => {
   return response.data;
 };
 
-
-// Get report analysis
 export const getReportAnalysis = async (reportId) => {
   const response = await API.get(
     `/analysis/${reportId}`
@@ -31,6 +30,5 @@ export const getReportAnalysis = async (reportId) => {
 
   return response.data;
 };
-
 
 export default API;
